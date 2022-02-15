@@ -24,7 +24,7 @@ fi
 # Set the password.
 echo $password | sudo passwd $username --stdin
 
-# Check to see if the passwd command succeeded.
+# Check to see if the passwd command succeeded.sudo yum install
 # Force password change on first login.
 sudo passwd -e $username
 
