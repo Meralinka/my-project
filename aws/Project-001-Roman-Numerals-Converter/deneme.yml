@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  
+Parameters:
+  
+Mappings:
+  
+
+  
+Resources:
+  LogicalID:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "String" # Required
+      GroupName: "String"
+      SecurityGroupEgress:
+        SecurityGroupEgress
+      SecurityGroupIngress:
+        SecurityGroupIngress
+      Tags:
+        Tags
+      VpcId: "String"
+
+  
+Outputs:
