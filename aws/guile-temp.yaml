@@ -62,7 +62,7 @@ Resources:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
       AvailabilityZones: !GetAZs 
-      DesiredCapacity: "2"
+      DesiredCapacity: "2" #instance sayısı
       HealthCheckGracePeriod: 90
       HealthCheckType: ELB
       LaunchTemplate:
