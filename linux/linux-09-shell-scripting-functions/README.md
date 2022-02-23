@@ -1,3 +1,4 @@
+cd ..
 # Hands-on Linux-09 : Shell Scripting/Functions
 
 Purpose of the this hands-on training is to teach the students how to use functions in shell.

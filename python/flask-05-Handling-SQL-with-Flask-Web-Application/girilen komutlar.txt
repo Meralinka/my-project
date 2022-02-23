@@ -1,0 +1,46 @@
+----app-with -sql.py için
+
+localde ;
+
+ -sudo pip3 install flask
+
+sudo pip3 install flask-mysql
+
+sudo pip3 install sqlalchemy
+
+sudo pip3 install Flask-SQLAlchemy
+
+
+(bazen sudo yazmadan da yapıyor hata verirse o şekilde denenebilir)
+
+
+#app.run(debug=True)
+   app.run(host='0.0.0.0', port=80)
+
+(son satırdaki değişiklik ilk satırı coment ettik, portlu satırı ekledik )
+
+
+----
+
+app with mysql için
+
+ec2 dan RDS e gelip create database den işlem yspıyoruz
+
+settings kısmında master username ve pasword için app withmysql deki isim ve paswordu girmemiz gerek
+
+port kısmınıda kontrol ediyoruz, database isminide yine burdan bakıp neyse onu yazıyoruz
+securiyt grup a gelip inboundan mysql/aurora seçilip eklenir 
+
+databaseimizi seçince endpoint kısmındaki uzantıyı kopyalayıp appwithmysql de database host kısmına yazıyoruz
+
+son satırdaki coment satırını aktif edince ec2 dan pc açıyoruz sonra güncelleme ve yükelemeler yapılıyor 
+
+sudo yum update -y
+sudo pip3 install flask
+..
+ ..
+sonra git i de yüklüyoruz 
+
+github repomuzdan clone ediyoruz flask5 dosyasını sonra bağlandığımız yerden ls ile my project içine giriyoruz 
+flask5 e geliyoruz sonrasında sudo pip3 app-with-mysql dediğimizde kod çalışıyor ve aws üzerinden ıp adresini kopyalayıp 
+browserda çalıştırıyoruz
