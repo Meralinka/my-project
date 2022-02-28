@@ -67,17 +67,17 @@ Resources:
     Properties:
       GroupDescription: Enables HTTP # Required
       SecurityGroupIngress:
-        IpProtocol: tcp
-        FromPort: 80
-        ToPort: 80
-        CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
       VpcId: !Ref myVPC 
 
   RDSSecGroup:
-    Type: AWS::EC2::SecurityGroup
+    Type: AWS::RDS::DBSecurityGroup
     Properties:
       GroupDescription: Enable just EC2SecGroup # Required
-      SecurityGroupIngress:
+      DBSecurityGroupIngress:
         - CIDRIP: 0.0.0.0/0
         - EC2SecurityGroupId: !GetAtt EC2SecGroup.GroupId
       
@@ -120,7 +120,7 @@ Resources:
                 mkdir templates && cd templates
                 curl https://raw.githubusercontent.com/Meralinka/my-project/main/aws/Project-004-Phonebook-Application/templates/add-update.html -o add-update.html
                 curl https://raw.githubusercontent.com/Meralinka/my-project/main/aws/Project-004-Phonebook-Application/templates/delete.html -o delete.html
-                curl https://raw.githubusercontent.com/Meralinka/my-project/main/aws/Project-004-Phonebook-Application/templates/index.html -o ,ndex.html
+                curl https://raw.githubusercontent.com/Meralinka/my-project/main/aws/Project-004-Phonebook-Application/templates/index.html -o index.html
                 cd ..
                 python3 phonebook-app.py
               - MyDBURI: !GetAtt MyDB.Endpoint.Address
@@ -171,7 +171,7 @@ Resources:
     Properties:
       DBInstanceIdentifier: phonebook-app
       DBName: clarusway_phonebook
-      DBInstanceClass: db.t2micro
+      DBInstanceClass: db.t2.micro
       AllocatedStorage: 20
       Engine: MySQL
       EngineVersion: 8.0.19
